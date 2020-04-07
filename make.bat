@@ -25,6 +25,18 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+if "%1" == "pdf" (
+   echo "%SOURCEDIR%/conf_pdf.py"
+   copy /y %SOURCEDIR%\conf_pdf.py %SOURCEDIR%\conf.py 
+   
+   %SPHINXBUILD% -b pdf %SOURCEDIR% %BUILDDIR%/../pdf %SPHINXOPTS% %O%
+   if errorlevel 1 exit /b 1
+   echo.
+   echo.Build finished. The pdf files are in %BUILDDIR%/pdf.
+   goto end
+)
+
+copy /y %SOURCEDIR%\conf_normal.py %SOURCEDIR%\conf.py 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
