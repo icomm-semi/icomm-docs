@@ -15,13 +15,3 @@ string(字符串)
 ++++++++++++++++++++
 
 *python通过单引号、双引号或三重引号引起来的表示字符串。*
-
-.. code-block::
-    :linenos:
-    :emphasize-lines: 2
-
-    if(1)
-        printf("hello\n");
-		
-.. note:: 
-    python的字符串是不可修改的。如修改一个字符，应使用replace，或使用左边字串+新字符+右边字串拼接而成
